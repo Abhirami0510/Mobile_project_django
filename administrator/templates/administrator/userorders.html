@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'administrator/base.html' %}
+{% block body_block %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div>
+              <h4>Orders</h4>
+<table class="table table-light" style="color:dark" >
+    <tr>
+        <td></td>
+        <td><strong>User</strong></td>
+        <td><strong>Product Name</strong></td>
+        <td><strong>Price</strong></td>
+        <td><strong>Address</strong></td>
+        <td><strong>Status</strong></td>
+    </tr>
+
+    {% for order in orders%}
+    <tr>
+        <td></td>
+        <td>{{order.user}}</td>
+        <td>{{order.product}}</td>
+        <td>{{order.product.price}}</td>
+        <td>{{order.address}}</td>
+        <td>{{order.status}}</td>
+        {% if not order.status == "Cancelled" %}
+        <td><a href="" class="btn btn-block btn-success btn-sm">Delivered</a></td>
+        <td><a href="" class="btn btn-block btn-warning btn-sm">Shipped</a></td>
+        {% endif %}
+    </tr>
+    {%endfor%}
+</table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

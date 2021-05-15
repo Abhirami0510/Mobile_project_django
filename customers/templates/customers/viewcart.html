@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<title>My Cart</title>
+{%extends 'customers/home.html'%}
+{%block body_block %}
+{% if carts %}
+<table class="table table-light" style="color:black">
+    <tr>
+        <td></td>
+        <td><strong>Product</strong></td>
+        <td><strong>Qty</strong></td>
+        <td><strong>Price</strong></td>
+        <td><strong>Total</strong></td>
+    </tr>
+
+    {%for cart in carts%}
+    <tr>
+        <td></td>
+        <td>{{cart.product}}</td>
+        <td>{{cart.quantity}}</td>
+        <td>{{cart.product.price}}</td>
+        <td>{{cart.price_total}}</td>
+        <td><a href="{% url 'removeitem' cart.id%}" class="btn btn-danger btn-sm">Remove</a></td>
+        <td><a href="{% url 'placeorder' cart.id%}" class="btn btn-success btn-sm">Place Order</a></td>
+    </tr>
+    {%endfor%}
+</table>
+{% else %}
+<br><br><h4 style="text-align:center">Cart Empty</h4>
+{% endif %}
+<!--
+<table class="table table-light text-dark">
+    <tr>
+        <td colspan="6" style="text-align:center">₹{{total.price_total__sum}}</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"><a href="#" class="btn btn-success">Proceed to Buy</a></td>
+    </tr>
+</table>--!>
+{%endblock%}

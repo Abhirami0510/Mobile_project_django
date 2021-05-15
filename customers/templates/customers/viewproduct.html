@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "customers/home.html" %}
+{% block body_block %}
+<br>
+<div class="row">
+    <div class="col-5">
+        <div class="card" style="height:500px;">
+        <img class="card-img-top" src="{{mobile.image.url}}" alt="Card image cap" style="width: auto;height:500px">
+
+        </div>
+    </div>
+
+    <div class="col-7">
+
+    <h1>{{mobile.model_name}}</h1>
+        <p ><h3>₹{{mobile.price}}/-</h3></p>
+ <br><br>
+    <h5 style="color:blue">Key Features</h5>
+        <p><b>{{mobile.specs}}</b></p>
+        <p style="color:red"><b>Stock left : {{mobile.stock}}</b></p>
+    <a href="{% url 'addtocart' mobile.id %}" class="btn btn-danger">Add to Cart</a>
+
+  </div>
+</div>
+
+    </div>
+
+</div>
+{% endblock %}

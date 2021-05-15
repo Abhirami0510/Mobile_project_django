@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Mobile</title>
+</head>--!>
+{% extends 'administrator/base.html'%}
+{% block body_block %}
+<br>
+<form method="post" action="" enctype="multipart/form-data">
+ <div class="col d-flex justify-content-center">
+      <div class="card bg-light" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title"><b>Product Details</b></h5>
+    <p class="card-text">
+                {%csrf_token%}
+                {{form.as_p}}
+    <button type="submit" class="btn btn-success pull-right">Add Product</button>
+    </p>
+
+  </div>
+</div>
+         </div>
+    </form>
+{% endblock %}

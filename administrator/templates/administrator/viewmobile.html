@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+{% extends "administrator/base.html" %}
+      {% block body_block %}
+<br>
+
+      <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="{{mobile.image.url}}" alt="Card image cap" >
+  <div class="card-body">
+    <h5 class="card-title">PRODUCT DETAILS</h5>
+      <p class="card-text">Product Name - <b>{{mobile.model_name}}</b><br>Features - <b>{{mobile.specs}}</b><br>Stock Left - <b>{{mobile.stock}} Nos.</b><br>Price - <b>Rs.{{mobile.price}}</b></p>
+
+
+  </div>
+</div>
+{% endblock %}
